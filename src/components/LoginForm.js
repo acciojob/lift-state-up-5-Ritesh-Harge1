@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 
-function LoginForm({ onLogin }) {
+function LoginForm({ isLoggedIn, setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      onLogin(); // update parent state
-    } else {
-      alert("Please enter email and password");
+      setIsLoggedIn(true);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "inline-block", textAlign: "left" }}>
-      <h2>🔑 Login</h2>
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
       <div>
-        <label>Email:</label><br />
+        <label>Email:</label>
         <input
           type="email"
           value={email}
@@ -25,9 +23,8 @@ function LoginForm({ onLogin }) {
           required
         />
       </div>
-      <br />
       <div>
-        <label>Password:</label><br />
+        <label>Password:</label>
         <input
           type="password"
           value={password}
@@ -35,7 +32,6 @@ function LoginForm({ onLogin }) {
           required
         />
       </div>
-      <br />
       <button type="submit">Login</button>
     </form>
   );
