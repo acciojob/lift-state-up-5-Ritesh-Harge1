@@ -4,7 +4,6 @@ import LoginForm from "./components/LoginForm";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // handler to update state when user logs in
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
