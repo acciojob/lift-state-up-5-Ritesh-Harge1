@@ -6,36 +6,28 @@ function LoginForm({ isLoggedIn, onLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (username && password) {
-      onLogin(); // notify parent
-    } else {
-      alert("Please enter username and password");
+      onLogin(); // update parent state
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Enter Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
       <button type="submit">Login</button>
     </form>
   );
 }
 
 export default LoginForm;
-
