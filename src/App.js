@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginForm from "./LoginForm";
+import LoginForm from "./components/LoginForm";  // ✅ updated path
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+
