@@ -1,24 +1,12 @@
-import React, { useState } from "react";
-import LoginForm from "./LoginForm";
+import React from "react";
 
-function App() {
-  // parent state
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // function to update login state
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
+function DummyApp() {
   return (
-    <div id="main">
-      {isLoggedIn ? (
-        <h2>Welcome! You are logged in.</h2>
-      ) : (
-        <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
-      )}
+    <div>
+      <p>This is a placeholder App component inside src/components.</p>
+      <p>The real App.js lives in src/App.js 🚀</p>
     </div>
   );
 }
 
-export default App;
+export default DummyApp;
