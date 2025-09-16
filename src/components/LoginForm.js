@@ -6,31 +6,49 @@ function LoginForm({ isLoggedIn, onLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // in real app we’d validate username & password here
-    onLogin();
+
+    // Here you could add real validation
+    if (username && password) {
+      onLogin(); // update parent state
+    } else {
+      alert("Please enter username and password");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Username: </label>
         <input
           type="text"
+          placeholder="Enter Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
+          style={{ margin: "5px", padding: "5px" }}
         />
       </div>
       <div>
-        <label>Password: </label>
         <input
           type="password"
+          placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
+          style={{ margin: "5px", padding: "5px" }}
         />
       </div>
-      <button type="submit">Login</button>
+      <button
+        type="submit"
+        style={{
+          marginTop: "10px",
+          padding: "8px 15px",
+          backgroundColor: "blue",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Login
+      </button>
     </form>
   );
 }
