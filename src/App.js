@@ -9,10 +9,10 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className="App">
       <h1>Lift State Up Demo</h1>
       {isLoggedIn ? (
-        <p>✅ You are logged in!</p>
+        <p>You are logged in!</p>
       ) : (
         <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
       )}
