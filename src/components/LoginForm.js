@@ -1,46 +1,39 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-function LoginForm({ isLoggedIn, setIsLoggedIn }) {
+function LoginForm({ isLoggedIn, onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Normally you'd check credentials here
-    if (username && password) {
-      setIsLoggedIn(true); // 🔑 Update parent state
-    }
+    // in real app we’d validate username & password here
+    onLogin();
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-3 bg-gray-100 p-6 rounded-xl shadow-lg"
-    >
-      <input
-        type="text"
-        placeholder="Enter username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        className="p-2 rounded border"
-        required
-      />
-      <input
-        type="password"
-        placeholder="Enter password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="p-2 rounded border"
-        required
-      />
-      <button
-        type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Login
-      </button>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Username: </label>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label>Password: </label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit">Login</button>
     </form>
   );
 }
 
 export default LoginForm;
+
