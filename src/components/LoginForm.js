@@ -7,9 +7,8 @@ function LoginForm({ isLoggedIn, onLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Here you could add real validation
     if (username && password) {
-      onLogin(); // update parent state
+      onLogin(); // notify parent
     } else {
       alert("Please enter username and password");
     }
@@ -23,7 +22,6 @@ function LoginForm({ isLoggedIn, onLogin }) {
           placeholder="Enter Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          style={{ margin: "5px", padding: "5px" }}
         />
       </div>
       <div>
@@ -32,23 +30,9 @@ function LoginForm({ isLoggedIn, onLogin }) {
           placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={{ margin: "5px", padding: "5px" }}
         />
       </div>
-      <button
-        type="submit"
-        style={{
-          marginTop: "10px",
-          padding: "8px 15px",
-          backgroundColor: "blue",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Login
-      </button>
+      <button type="submit">Login</button>
     </form>
   );
 }
