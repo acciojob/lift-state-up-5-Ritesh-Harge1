@@ -8,7 +8,7 @@ function App() {
   return (
     <div id="main">
       {isLoggedIn ? (
-        <p>You are successfully logged in</p>
+        <p>You are logged in!</p>
       ) : (
         <Login setIsLoggedIn={setIsLoggedIn} />
       )}
