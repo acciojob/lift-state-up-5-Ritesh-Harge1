@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
-import LoginForm from './LoginForm';
+import React, { useState } from "react";
+import Login from "./Login";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
   return (
-    <div className="App">
-      <h1>State Management Example</h1>
+    <div id="main">
       {isLoggedIn ? (
-        <h2>Welcome! You are logged in.</h2>
+        <p>You are successfully logged in</p>
       ) : (
-        <LoginForm onLogin={handleLogin} />
+        <Login setIsLoggedIn={setIsLoggedIn} />
       )}
     </div>
   );
