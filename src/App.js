@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Login from "./Login";
-import "./styles/app.css";
+import "./styles/App.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
